@@ -37,14 +37,43 @@ public class Cuenta {
 	}
 
 	public void ingresar(double i) {
-		this.setSaldo(this.getSaldo()+i);
+		mMovimientos.add(new Movimiento(i,Movimiento.signo.H));
 		
 	}
 
 	public void reintegro(double i) {
-		
-		this.setSaldo(this.getSaldo()-i);	
+		mMovimientos.add(new Movimiento(i,Movimiento.signo.D));
 		
 	}
+	public double saldofinal() {
 
+		double saldofin = Saldo;
+		System.out.println("Saldo inicial " + Saldo + " €");
+		for (Movimiento m : mMovimientos) {
+			if(m.getDetalle()=="H")
+			{
+				System.out.println("Ingreso de : "+m.getImporte());
+				saldofin=saldofin+m.getImporte();
+			}
+			else if(m.getDetalle()=="D")
+			{
+				
+				if(saldofin-m.getImporte()>=-500)
+				{
+					System.out.println("Reintegro de : "+m.getImporte());
+					saldofin=saldofin-m.getImporte();
+				}
+				else
+				{
+					System.out.println("Reintegro rechazado para la cuenta "+Numero+", dispone de "+saldofin+", e intenta sacar "+m.getImporte()+"€");
+				}
+				
+			}
+			else
+			{return -1;}
+			
+		}
+		System.out.println("Saldo final : "+saldofin+"€");
+		return saldofin;
+		}
 }

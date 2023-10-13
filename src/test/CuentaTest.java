@@ -49,6 +49,4 @@ class CuentaTest {
 		assertEquals(-900, mia.getSaldo());
 		
 	}
-	
-	
 }

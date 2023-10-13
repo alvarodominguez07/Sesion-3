@@ -10,6 +10,14 @@ public class Cuenta {
 	public List <Movimiento> mMovimientos;
 	
 	
+	
+	public Cuenta(double saldo, String titular, String numero) {
+		super();
+		Saldo = saldo;
+		this.titular = titular;
+		Numero = numero;
+	}
+
 	public List<Movimiento> getmMovimientos() {
 		return mMovimientos;
 	}
@@ -18,12 +26,7 @@ public class Cuenta {
 		this.mMovimientos.add(mMovimientos);
 	}
 
-	public Cuenta(double saldo, String numero) {
-		super();
-		Saldo = saldo;
-		Numero = numero;
-		
-	}
+	
 
 	public double getSaldo() {
 		return Saldo;

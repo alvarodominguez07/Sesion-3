@@ -34,10 +34,13 @@ public class Cuenta {
 	}
 
 	public void ingresar(double i) {
+		this.setSaldo(this.getSaldo()+i);
 		
 	}
 
 	public void reintegro(double i) {
+		
+		this.setSaldo(this.getSaldo()-i);	
 		
 	}
 

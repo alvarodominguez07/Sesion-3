@@ -39,6 +39,18 @@ class CuentaTest {
 	void tearDown() throws Exception {
 	}
 
-
+	@Test
+	void testIngresar() {
+		
+		mia.ingresar(3000);
+		assertEquals(3100, mia.getSaldo());
+	}
+	@Test
+	void testRetirar() {
+		mia.reintegro(1000);
+		assertEquals(-900, mia.getSaldo());
+		
+	}
+	
 	
 }

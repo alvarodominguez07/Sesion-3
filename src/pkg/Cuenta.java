@@ -1,12 +1,28 @@
 package pkg;
 
+import java.util.List;
+
 public class Cuenta {
 
 	private double Saldo;
+	private String titular;
+	private String Numero;
+	public List <Movimiento> mMovimientos;
 	
-	public Cuenta(double saldo) {
+	
+	public List<Movimiento> getmMovimientos() {
+		return mMovimientos;
+	}
+
+	public void setmMovimientos(Movimiento mMovimientos) {
+		this.mMovimientos.add(mMovimientos);
+	}
+
+	public Cuenta(double saldo, String numero) {
 		super();
 		Saldo = saldo;
+		Numero = numero;
+		
 	}
 
 	public double getSaldo() {
@@ -18,15 +34,11 @@ public class Cuenta {
 	}
 
 	public void ingresar(double i) {
-		this.setSaldo(this.getSaldo()+i);		
+		
 	}
 
 	public void reintegro(double i) {
-		if(this.getSaldo()>=i)
-		this.setSaldo(this.getSaldo()-i);	
 		
-		else
-			System.out.println("Saldo insuficiente");
 	}
 
 }

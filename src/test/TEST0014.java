@@ -34,22 +34,20 @@ class TEST0014 {
 
 	@Test
 	void testctaPruebas() {
+		System.out.println("Cuenta "+ctaPruebas.getNumero());
 		ctaPruebas.reintegro(200);
 		ctaPruebas.ingresar(100);
 		ctaPruebas.reintegro(200);
-		System.out.println(ctaPruebas.saldofinal());
 		assertEquals(-250, ctaPruebas.saldofinal());
 		
 		
 	}
 	@Test
 	void testctaPruebas1() {
-		
+		System.out.println("\n Cuenta "+ctaPruebas1.getNumero());
 		ctaPruebas1.reintegro(350);
-		ctaPruebas1.saldofinal();
 		ctaPruebas1.reintegro(200);
 		ctaPruebas1.ingresar(50);
-		
 		assertEquals(-450, ctaPruebas1.saldofinal());
 		
 	}

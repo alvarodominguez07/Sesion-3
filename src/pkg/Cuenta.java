@@ -1,5 +1,6 @@
 package pkg;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cuenta {
@@ -7,7 +8,14 @@ public class Cuenta {
 	private double Saldo;
 	private String titular;
 	private String Numero;
-	public List <Movimiento> mMovimientos;
+	public String getNumero() {
+		return Numero;
+	}
+
+	public void setNumero(String numero) {
+		Numero = numero;
+	}
+	List <Movimiento> mMovimientos;
 	
 	
 	
@@ -16,6 +24,7 @@ public class Cuenta {
 		Saldo = saldo;
 		this.titular = titular;
 		Numero = numero;
+		this.mMovimientos=new ArrayList<>();
 	}
 
 	public List<Movimiento> getmMovimientos() {
@@ -66,6 +75,7 @@ public class Cuenta {
 				else
 				{
 					System.out.println("Reintegro rechazado para la cuenta "+Numero+", dispone de "+saldofin+", e intenta sacar "+m.getImporte()+"€");
+				    saldofin=-500;
 				}
 				
 			}

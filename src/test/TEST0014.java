@@ -44,7 +44,7 @@ class TEST0014 {
 	}
 	@Test
 	void testctaPruebas1() {
-		System.out.println("\n Cuenta "+ctaPruebas1.getNumero());
+		System.out.println("\nCuenta "+ctaPruebas1.getNumero());
 		ctaPruebas1.reintegro(350);
 		ctaPruebas1.reintegro(200);
 		ctaPruebas1.ingresar(50);
